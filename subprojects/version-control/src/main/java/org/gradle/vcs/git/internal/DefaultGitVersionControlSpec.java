@@ -37,6 +37,11 @@ public class DefaultGitVersionControlSpec extends AbstractVersionControlSpec imp
     }
 
     @Override
+    public bool canPopulateOffline() {
+        return getUrl().getScheme() == "file:";
+    };
+
+    @Override
     public void setUrl(String url) {
         // TODO - should use a resolver so that this method is consistent with Project.uri(string)
         try {

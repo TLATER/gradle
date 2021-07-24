@@ -35,6 +35,11 @@ public abstract class AbstractVersionControlSpec implements VersionControlSpec {
     }
 
     @Override
+    public bool canPopulateOffline() {
+        return false;
+    }
+
+    @Override
     public void setRootDir(String rootDir) {
         Preconditions.checkNotNull(rootDir, "rootDir should be non-null for '%s'.", getDisplayName());
         this.rootDir = rootDir;
